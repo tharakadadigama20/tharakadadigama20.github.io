@@ -2,101 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Tharaka Dadigama</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    :root{
-      /* Default DARK theme (site only supports dark mode now) */
-      --bg:#102027; /* dark slate */
+    :root {
+      --bg: #102027;
       --card: rgba(255,255,255,0.04);
       --muted: rgba(255,255,255,0.95);
       --glass: rgba(255,255,255,0.04);
       --accent: #00e676;
-      --max-width:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(180deg,var(--bg),#087) fixed;
-      color:var(--muted);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;align-items:center;justify-content:center;padding:48px;
+      --max-width: 1100px;
     }
 
-    .wrap{
-      width:100%;max-width:var(--max-width);
-      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.03));
-      border-radius:16px;
-      padding:48px 36px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.18);
-      backdrop-filter:blur(6px) saturate(120%);
+    * { box-sizing: border-box; }
+    body, html { margin: 0; padding: 0; height: 100%; }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(180deg, var(--bg), #087) fixed;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
     }
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-    .title{
-      display:flex;flex-direction:column;gap:6px;
+    .wrap {
+      width: 100%;
+      max-width: var(--max-width);
+      background: rgba(255,255,255,0.03);
+      border-radius: 16px;
+      padding: 40px 28px;
+      backdrop-filter: blur(6px) saturate(120%);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
     }
-    h1{
-      margin:0;font-size:28px;font-weight:700;color:#fff;letter-spacing:0.2px;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
     }
-    .sub{color:rgba(255,255,255,0.9);font-weight:500}
-    .projects{margin:8px 0 18px}
-    .projects a{color:rgba(0,0,0,0.85);background:#b7ffcf;padding:6px 10px;border-radius:8px;margin-right:8px;text-decoration:none;font-weight:600;font-size:14px}
 
-    .center{display:flex;flex-direction:column;align-items:center;text-align:center}
-    .socials{display:grid;grid-template-columns:repeat(auto-fit,minmax(56px,1fr));gap:18px;max-width:860px;margin:28px 0}
-    .icon{
-      display:flex;align-items:center;justify-content:center;
-      height:64px;width:64px;border-radius:12px;background:var(--glass);color:#000;font-size:22px;
-      transition:all .18s ease;cursor:pointer;border:1px solid rgba(0,0,0,0.06);
+    h1 {
+      margin: 0;
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 700;
+      color: #fff;
     }
-    .icon i{font-size:22px;color:rgba(0,0,0,0.85)}
-    .icon:hover{transform:translateY(-6px);box-shadow:0 6px 18px rgba(0,0,0,0.18);filter:brightness(1.02)}
 
-    .tagline{margin-top:6px;color:rgba(255,255,255,0.87)}
-    .hashtags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-    .hashtag{background:rgba(0,0,0,0.06);padding:8px 10px;border-radius:999px;font-weight:600;font-size:13px}
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-    .actions{display:flex;gap:10px;align-items:center}
-    .btn{padding:10px 14px;border-radius:10px;border:0;background:rgba(255,255,255,0.12);color:var(--muted);cursor:pointer;font-weight:600}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+    .tagline {
+      margin-top: 6px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
 
-    footer{display:flex;justify-content:center;margin-top:22px;color:rgba(255,255,255,0.75);font-size:13px}
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 600px;
+      margin: 28px 0;
+    }
 
-    /* responsive tweaks */
-    @media (max-width:640px){
-      .wrap{padding:28px 18px}
-      .socials{grid-template-columns:repeat(6,64px)}
+    .icon {
+      height: 60px;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--glass);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all .18s ease;
+    }
+
+    .icon i {
+      font-size: 22px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .icon:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 22px;
+      text-align: center;
+      opacity: 0.75;
+      font-size: 14px;
+    }
+
+    /* Ultra small devices */
+    @media (max-width: 480px) {
+      body { padding: 16px; }
+      .wrap { padding: 24px 16px; }
+      .icon { height: 52px; width: 52px; }
+      .socials { gap: 14px; grid-template-columns: repeat(3, 1fr); }
+      .btn { padding: 8px 12px; font-size: 14px; }
     }
   </style>
 </head>
+
 <body>
   <main class="wrap" role="main">
     <header>
-      <div class="title">
-        <h1>Hi, I’m <span id="name">Tharaka Dadigama</span></h1>
-      </div>
-      <div class="actions">
-        <button class="btn" id="copyBtn" title="Copy profile link">Copy Link</button>
-      </div>
+      <h1>Hi, I’m <span id="name">Tharaka Dadigama</span></h1>
+      <button class="btn" id="copyBtn">Copy Link</button>
     </header>
 
     <section class="center">
       <p class="tagline">Find me on</p>
 
-      <div class="socials" aria-label="social links">
-        <a class="icon" href="https://www.instagram.com/td.2.0/" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a class="icon" href="https://www.facebook.com/tharaka.dadigama.5/" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a class="icon" href="https://lk.linkedin.com/in/tharaka-dadigama-96133b196" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a class="icon" href="https://github.com/tharakadadigama20" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a class="icon" href="https://x.com/TDadigama" title="X" aria-label="X"><i class="fa-brands fa-x"></i></a>
+      <div class="socials">
+        <a class="icon" href="https://www.instagram.com/td.2.0/"><i class="fab fa-instagram"></i></a>
+        <a class="icon" href="https://www.facebook.com/tharaka.dadigama.5/"><i class="fab fa-facebook"></i></a>
+        <a class="icon" href="https://lk.linkedin.com/in/tharaka-dadigama-96133b196"><i class="fab fa-linkedin-in"></i></a>
+        <a class="icon" href="https://github.com/tharakadadigama20"><i class="fab fa-github"></i></a>
+        <a class="icon" href="https://x.com/TDadigama"><i class="fa-brands fa-x"></i></a>
       </div>
     </section>
 
@@ -104,28 +152,22 @@
   </main>
 
   <script>
-    // small JS for UX niceties
     const nameEl = document.getElementById('name');
     const copyBtn = document.getElementById('copyBtn');
-
-    // read a name from URL ?name= if present
     const params = new URLSearchParams(location.search);
-    if(params.get('name')){
-      nameEl.textContent = params.get('name');
-    }
 
-    copyBtn.addEventListener('click', async ()=>{
+    if (params.get('name')) nameEl.textContent = params.get('name');
+
+    copyBtn.addEventListener('click', async () => {
       const url = location.href.split('?')[0] + '?name=' + encodeURIComponent(nameEl.textContent);
-      try{
+      try {
         await navigator.clipboard.writeText(url);
         copyBtn.textContent = 'Copied!';
-        setTimeout(()=> copyBtn.textContent = 'Copy Link',1600);
-      }catch(e){
-        location.href = url; // fallback
+        setTimeout(() => copyBtn.textContent = 'Copy Link', 1600);
+      } catch {
+        location.href = url;
       }
     });
-
-    // Theme: site is dark-only — no toggle available
   </script>
 </body>
 </html>

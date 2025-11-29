@@ -51,6 +51,8 @@ Version: 1.2.1
    - 2025-11-29: Site now enforces dark mode only and the theme toggle button was removed from index.html
    - 2025-11-29: Site now enforces dark mode only and the theme toggle button was removed from index.html
    - 2025-11-29: Fix — X (Twitter) brand icon updated to a working Font Awesome class in index.html
+   - 2025-11-29: Fix — X (Twitter) brand icon updated to a working Font Awesome class in index.html
+   - 2025-11-29: Enhancement — Improved mobile responsiveness for index.html: stacked header on small screens, tighter paddings, smaller social icons and improved dark-mode icon contrast.
   
 Version: 1.2.0
   - Added portfolio details page
