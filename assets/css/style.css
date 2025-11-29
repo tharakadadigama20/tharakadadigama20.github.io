@@ -400,6 +400,83 @@ section {
   color: #1f5297;
 }
 
+/* ---------------------
+   New landing / large-social styles
+   --------------------- */
+#hero {
+  /* use a consistent teal background for a bold, modern look */
+  background: linear-gradient(180deg,#0ea5a4 0%, #0b9a94 100%);
+  color: #050505; /* dark text for high contrast */
+}
+
+.landing-content {
+  max-width: 1050px;
+  padding: 6rem 1.5rem;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.landing-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #071014; /* near-black */
+  margin-bottom: 0.4rem;
+}
+
+.projects-links {
+  color: rgba(7,16,20,0.85);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.projects-links a { color: rgba(7,16,20,0.95); font-weight:600; text-decoration:underline; }
+.projects-links .sep { margin: 0 8px; color: rgba(7,16,20,0.55); }
+
+.find-heading {
+  font-size: 18px;
+  color: rgba(7,16,20,0.75);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.big-social-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.big-social-list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  font-size: 34px;
+  color: #020607; /* black icons */
+  text-decoration: none;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
+  border-radius: 12px;
+}
+
+.big-social-list a:hover {
+  transform: translateY(-6px) scale(1.06);
+  color: #ffffff;
+  background: rgba(7,16,20,0.18);
+}
+
+.interests {
+  margin-top: 18px;
+  color: rgba(7,16,20,0.7);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .landing-title { font-size: 26px; }
+  .big-social-list a { width: 56px; height: 56px; font-size: 26px; }
+  .landing-content { padding: 3.5rem 1rem; }
+}
+
 /*--------------------------------------------------------------
 # Akills
 --------------------------------------------------------------*/
